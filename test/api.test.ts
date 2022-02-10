@@ -2,7 +2,7 @@
 import request from 'supertest';
 import assert from 'assert';
 
-import app from '../src/app.js';
+import app from '../src/app';
 
 describe('API', function () {
   it('Returns 404 for an unknown endpoint', async function () {

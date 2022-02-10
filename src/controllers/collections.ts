@@ -1,13 +1,13 @@
 import { Router } from 'express';
 
-import { ServerError } from '../middleware/errorHandler.js';
+import { ServerError } from '../middleware/errorHandler';
 import {
   closeBrowser,
   getAllElements,
   getImage,
   loadBrowser,
   loadPage,
-} from '../utils/puppeteerHelper.js';
+} from '../utils/puppeteerHelper';
 
 const collectionsRouter = Router();
 
