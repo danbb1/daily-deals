@@ -19,7 +19,7 @@ describe('API', function () {
     });
   });
   it('Returns 400 for a parameter less than 0', async function () {
-    const response = await request(app).get('/collections/foo').expect(400);
+    const response = await request(app).get('/collections/-1').expect(400);
 
     assert.deepEqual(response.body, {
       message: 'Parameter must be a positive number.',
