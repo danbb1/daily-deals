@@ -10,8 +10,12 @@ export class ServerError extends Error {
   }
 }
 
-export const errorHandler = (error, _req, res, _next) => {
-  res
-    .status(error.status)
-    .send({ message: error.message, status: error.status });
+export const errorHandler = (error, _req, res, next) => {
+  if (error instanceof ServerError) {
+    res
+      .status(error.status)
+      .send({ message: error.message, status: error.status });
+  } else {
+    next(error);
+  }
 };

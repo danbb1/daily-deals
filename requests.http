@@ -1,7 +1,7 @@
 GET http://localhost:3000/foo/bar
 
 ###
-GET http://localhost:3000/collections/1
+GET http://localhost:3000/collections/2
 
 ###
 GET http://localhost:3000/collections/100
