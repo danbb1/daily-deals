@@ -9,7 +9,7 @@
     "dev": "nodemon src/index.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
-    "test": "mocha --timeout 10000",
+    "test": "NODE_ENV=test mocha --timeout 10000",
     "test:watch": "npm run test -- --watch"
   },
   "keywords": [],
@@ -17,7 +17,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.17.2",
-    "morgan": "^1.10.0"
+    "morgan": "^1.10.0",
+    "puppeteer": "^13.3.0"
   },
   "devDependencies": {
     "eslint": "^8.8.0",

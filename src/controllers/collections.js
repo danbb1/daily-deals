@@ -1,6 +1,13 @@
 import { Router } from 'express';
 
 import { ServerError } from '../middleware/errorHandler.js';
+import {
+  closeBrowser,
+  getAllElements,
+  getImage,
+  loadBrowser,
+  loadPage,
+} from '../utils/puppeteerHelper.js';
 
 const collectionsRouter = Router();
 
@@ -8,14 +15,30 @@ collectionsRouter.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   const index = Number(id);
 
+  const browser = await loadBrowser();
+
   try {
     if (Number.isNaN(index) || index < 0) {
-      throw new ServerError('Parameter must be a positive number', 400);
+      throw new ServerError('Parameter must be a positive number.', 400);
     }
 
-    res.send('HELLO');
+    const page = await loadPage(
+      browser,
+      'https://www.ebay.co.uk/deals/daily/all',
+    );
+
+    const elements = await getAllElements(page, '.dne-itemtile');
+    if (index - 1 >= elements.length) {
+      throw new ServerError('Resource not found.', 404);
+    }
+
+    const image = await getImage(elements[index - 1]);
+
+    res.send(`<img src="data:image/png;base64,${image}" />`);
   } catch (error) {
     next(error);
+  } finally {
+    await closeBrowser(browser);
   }
 });
 

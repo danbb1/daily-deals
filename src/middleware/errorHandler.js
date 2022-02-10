@@ -1,4 +1,4 @@
-const unknownEndpoint = (_req, res) => {
+export const unknownEndpoint = (_req, res) => {
   res.status(404).send({ error: 'Unknown Endpoint' });
 };
 
@@ -10,10 +10,8 @@ export class ServerError extends Error {
   }
 }
 
-const errorHandler = (error, _req, res, next) => {
+export const errorHandler = (error, _req, res, _next) => {
   res
     .status(error.status)
     .send({ message: error.message, status: error.status });
 };
-
-export { errorHandler, unknownEndpoint };

@@ -14,7 +14,7 @@ describe('API', function () {
     const response = await request(app).get('/collections/foo').expect(400);
 
     assert.deepEqual(response.body, {
-      message: 'Parameter must be a positive number',
+      message: 'Parameter must be a positive number.',
       status: 400,
     });
   });
@@ -22,7 +22,7 @@ describe('API', function () {
     const response = await request(app).get('/collections/foo').expect(400);
 
     assert.deepEqual(response.body, {
-      message: 'Parameter must be a positive number',
+      message: 'Parameter must be a positive number.',
       status: 400,
     });
   });
