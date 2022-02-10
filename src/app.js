@@ -10,7 +10,6 @@ app.use(logger('dev'));
 
 app.use('/collections', collectionsRouter);
 
-// Error handling
 app.use(errorHandler);
 app.use(unknownEndpoint);
 

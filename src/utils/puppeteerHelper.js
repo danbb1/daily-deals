@@ -18,12 +18,14 @@ export const loadPage = async (browser, url) => {
 };
 
 export const getAllElements = async (page, selector) => {
+  // $$ = querySelectorAll
   const elements = await page.$$(selector);
 
   return elements;
 };
 
 export const getImage = async element => {
+  // Returns a binary buffer of the screenshot of the selected element
   const image = await element.screenshot();
 
   return image;

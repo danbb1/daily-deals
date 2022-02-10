@@ -17,3 +17,19 @@ GET /collections/:id
 Sample return:
 
 ![Sample return daily deal image](./sample.png)
+
+## How To Use
+
+```console
+# Clone this repository
+$ git clone https://github.com/danbb1/daily-deals.git
+
+# Go to directory
+$ cd daily-deals
+
+# Install dependencies
+$ npm install
+
+# Start the server
+$ npm start
+```

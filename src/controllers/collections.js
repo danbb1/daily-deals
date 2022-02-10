@@ -27,6 +27,7 @@ collectionsRouter.get('/:id', async (req, res, next) => {
       'https://www.ebay.co.uk/deals/daily/all',
     );
 
+    // .dne-itemtile is class of each deal element
     const elements = await getAllElements(page, '.dne-itemtile');
 
     if (index - 1 >= elements.length) {
