@@ -26,7 +26,7 @@ describe('API', function () {
       status: 400,
     });
   });
-  it('Returns 404 for a resource not in the collections', async function () {
+  it('Returns 404 for a resource not in the collection', async function () {
     const response = await request(app)
       .get('/collections/10000000000')
       .expect(404);
@@ -35,5 +35,11 @@ describe('API', function () {
       message: 'Resource not found.',
       status: 404,
     });
+  });
+  it('Returns an image for a valid request', async function () {
+    await request(app)
+      .get('/collections/1')
+      .expect(200)
+      .expect('Content-Type', /image\/png/);
   });
 });

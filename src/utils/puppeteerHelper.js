@@ -24,7 +24,7 @@ export const getAllElements = async (page, selector) => {
 };
 
 export const getImage = async element => {
-  const image = await element.screenshot({ encoding: 'base64' });
+  const image = await element.screenshot();
 
   return image;
 };

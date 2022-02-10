@@ -35,7 +35,7 @@ collectionsRouter.get('/:id', async (req, res, next) => {
 
     const image = await getImage(elements[index - 1]);
 
-    res.send(`<img src="data:image/png;base64,${image}" />`);
+    res.status(200).type('png').send(image);
   } catch (error) {
     next(error);
   } finally {
