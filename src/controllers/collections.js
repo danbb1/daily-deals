@@ -28,6 +28,7 @@ collectionsRouter.get('/:id', async (req, res, next) => {
     );
 
     const elements = await getAllElements(page, '.dne-itemtile');
+
     if (index - 1 >= elements.length) {
       throw new ServerError('Resource not found.', 404);
     }

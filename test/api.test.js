@@ -26,4 +26,14 @@ describe('API', function () {
       status: 400,
     });
   });
+  it('Returns 404 for a resource not in the collections', async function () {
+    const response = await request(app)
+      .get('/collections/10000000000')
+      .expect(404);
+
+    assert.deepEqual(response.body, {
+      message: 'Resource not found.',
+      status: 404,
+    });
+  });
 });
