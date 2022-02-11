@@ -17,12 +17,14 @@ export const loadPage = async (browser: Browser, url: string) => {
   return page;
 };
 
+// $$ = querySelectorAll
 export const getAllElements = async (page: Page, selector: string) => {
   const elements = await page.$$(selector);
 
   return elements;
 };
 
+// Returns a buffer of the screenshot
 export const getImage = async (element: ElementHandle<Element>) => {
   const image = await element.screenshot();
 

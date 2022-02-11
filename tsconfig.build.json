@@ -1,3 +1,4 @@
+// Exclude test files from build distribution
 {
   "extends": "./tsconfig.json",
   "exclude": [
