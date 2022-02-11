@@ -1,6 +1,6 @@
 # Ebay Daily Deals API
 
-A simple Node.js server with a single API that fetches screenshots from [Ebay's daily deals](https://www.ebay.co.uk/deals/daily/all). Returns an image of the deal.
+A simple Node.js server written in TypeScript with a single API that fetches screenshots from [Ebay's daily deals](https://www.ebay.co.uk/deals/daily/all). Returns an image of the deal.
 
 Uses Express and Puppeteer.
 
@@ -30,6 +30,9 @@ $ cd daily-deals
 # Install dependencies
 $ npm install
 
-# Start the server
-$ npm start
+# Build Typescript and start server
+$ npm run build && npm start
+
+# Or start dev server
+$ npm run dev
 ```

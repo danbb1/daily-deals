@@ -1,8 +1,8 @@
 import express from 'express';
 import logger from 'morgan';
 
-import collectionsRouter from './controllers/collections.js';
-import { errorHandler, unknownEndpoint } from './middleware/errorHandler.js';
+import collectionsRouter from './controllers/collections';
+import { errorHandler, unknownEndpoint } from './middleware/errorHandler';
 
 const app = express();
 
